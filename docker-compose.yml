@@ -14,10 +14,7 @@
 #     volumes:
 #       - ./storage:/storage
 
-<<<<<<< Updated upstream
-=======
 version: "3.3"
->>>>>>> Stashed changes
 
 services:
   backend:
