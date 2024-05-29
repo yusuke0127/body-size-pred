@@ -22,8 +22,9 @@ def get_recommended_sizes(gender, age, weight, height):
     }
     try:
         # Change URL to match your backend service
-        # res = requests.get("http://localhost:8080/predict", params=user_input)
-        res = requests.get("http://backend:8080/predict", params=user_input)
+        # Cloud run endpoint
+        res = requests.get("https://body-size-pred-backend-6xm4os3l7a-an.a.run.app/predict", params=user_input)
+        # res = requests.get("http://backend:8080/predict", params=user_input)
 
         if res.status_code == 200:
             res_json = res.json()
