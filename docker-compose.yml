@@ -1,15 +1,39 @@
+# services:
+#   frontend:
+#     build: streamlit
+#     ports:
+#       - 8501:8501
+#     depends_on:
+#       - backend
+#     volumes:
+#         - ./storage:/storage
+#   backend:
+#     build: api
+#     ports:
+#       - 8080:8080
+#     volumes:
+#       - ./storage:/storage
+
+
 services:
-  frontend:
-    build: streamlit
+  backend:
+    container_name: backend
+    build: api/
     ports:
-      - 8501:8501
+      - "8080:8080"
+    networks:
+      - deploy_network
+
+  frontend:
+    container_name: frontend
+    build: streamlit/
+    ports:
+      - "8501:8501"
     depends_on:
       - backend
-    volumes:
-        - ./storage:/storage
-  backend:
-    build: api
-    ports:
-      - 8080:8080
-    volumes:
-      - ./storage:/storage
+    networks:
+      - deploy_network
+
+networks:
+  deploy_network:
+    driver: bridge
