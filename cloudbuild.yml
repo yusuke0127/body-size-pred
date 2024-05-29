@@ -11,12 +11,12 @@ steps:
 
   # Tag the built images with the desired tags
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['tag', 'workspace_backend:latest', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/myimage:$SHORT_SHA-backend']
+    args: ['tag', 'workspace_backend:latest', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-backend']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['tag', 'workspace_frontend:latest', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/myimage:$SHORT_SHA-frontend']
+    args: ['tag', 'workspace_frontend:latest', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-frontend']
 
   # Push the tagged images to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/myimage:$SHORT_SHA-backend']
+    args: ['push', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-backend']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/myimage:$SHORT_SHA-frontend']
+    args: ['push', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-frontend']
