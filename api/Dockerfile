@@ -10,10 +10,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8000
 
-# Use this when running locally
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# EXPOSE 8080
+
+# # Use this when running locally
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
+
+
 
 # Use this when deploying to GCP
 # CMD uvicorn main:app --host 0.0.0.0 --port $PORT

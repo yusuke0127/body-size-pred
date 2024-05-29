@@ -21,7 +21,7 @@ services:
     container_name: backend
     build: api/
     ports:
-      - "8080:8080"
+      - "8000:8000"
     networks:
       - deploy_network
 
@@ -29,7 +29,7 @@ services:
     container_name: frontend
     build: streamlit/
     ports:
-      - "8501:8501"
+      - "8080:8080"
     depends_on:
       - backend
     networks:

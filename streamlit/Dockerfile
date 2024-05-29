@@ -9,6 +9,12 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-EXPOSE 8501
+EXPOSE 8080
 
-CMD ["streamlit", "run", "main.py"]
+CMD streamlit run --server.port 8080 main.py
+
+# EXPOSE 8501
+
+# CMD ["streamlit", "run", "main.py"]
+
+
