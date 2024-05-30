@@ -23,7 +23,7 @@ steps:
 
 # Deploy to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', '--image', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-backend', '--platform', 'managed', '--region', 'asia-northeast1']
+    args: ['run', 'deploy', 'body-size-pred', '--image', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-backend', '--platform', 'managed', '--region', 'asia-northeast1']
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', '--image', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-frontend', '--platform', 'managed', '--region', 'asia-northeast1']
+    args: ['run', 'deploy', 'body-size-pred-frontend', '--image', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/body-size-pred-repo/body-size-pred:$SHORT_SHA-frontend', '--platform', 'managed', '--region', 'asia-northeast1']
