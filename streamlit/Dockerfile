@@ -9,15 +9,10 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-# EXPOSE 8080
-
-# CMD streamlit run --server.port 8080 main.py
-
+# When deploying to GCP
 CMD streamlit run --server.port $PORT main.py
 
-
+# Uncomment the lines below when developing locally
 # EXPOSE 8501
 
 # CMD ["streamlit", "run", "main.py"]
-
-

@@ -10,7 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-
 # # Use this when running locally
 # EXPOSE 8080
 
